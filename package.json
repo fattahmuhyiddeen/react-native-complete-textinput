@@ -1,0 +1,25 @@
+{
+  "name": "react-native-complete-textinput",
+  "version": "1.0.0",
+  "description": "Usable text input of the box for React Native",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fattahmuhyiddeen/react-native-complete-textinput.git"
+  },
+  "keywords": [
+    "textinput",
+    "password",
+    "float",
+    "label"
+  ],
+  "author": "Fattah Muhyiddeen <fattahmuhyiddeen@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fattahmuhyiddeen/react-native-complete-textinput/issues"
+  },
+  "homepage": "https://github.com/fattahmuhyiddeen/react-native-complete-textinput#readme"
+}
