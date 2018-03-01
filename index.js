@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { View, TouchableOpacity, Image } from 'react-native';
+import { View, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import EStyleSheet from 'react-native-extended-stylesheet';
 import FloatingLabel from 'react-native-floating-labels';
 
-const styles = EStyleSheet.create({
+const styles = StyleSheet.create({
   floatingLabel: { backgroundColor: 'transparent' },
   input: { borderWidth: 0 },
   formInput: { borderWidth: 0, borderBottomWidth: 1.5, marginTop: 10 },
@@ -13,14 +12,7 @@ const styles = EStyleSheet.create({
 const showImage = require('./show.png');
 const hideImage = require('./hide.png');
 
-class MainTextInput extends Component {
-  // const MainTextInput = ({
-  //   onChangeText,
-  //   placeholder,
-  //   isEnable,
-  //   value,
-  //   secureTextEntry,
-  // }) => (
+class CompleteTextInput extends Component {
   state = { isSecure: true };
   render() {
     const {
@@ -73,9 +65,8 @@ class MainTextInput extends Component {
     );
   }
 }
-// );
 
-MainTextInput.propTypes = {
+CompleteTextInput.propTypes = {
   isEnable: PropTypes.bool,
   placeholder: PropTypes.string,
   onChangeText: PropTypes.func,
@@ -84,7 +75,7 @@ MainTextInput.propTypes = {
   textColor: PropTypes.string,
 };
 
-MainTextInput.defaultProps = {
+CompleteTextInput.defaultProps = {
   isEnable: true,
   placeholder: 'Input',
   onChangeText: () => { },
@@ -93,4 +84,4 @@ MainTextInput.defaultProps = {
   textColor: 'black',
 };
 
-export default MainTextInput;
+export default CompleteTextInput;
