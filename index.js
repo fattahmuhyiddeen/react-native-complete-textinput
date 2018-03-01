@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Image, StyleSheet, Keyboard } from 'react-native';
 import PropTypes from 'prop-types';
 import FloatingLabel from 'react-native-floating-labels';
 
@@ -30,12 +30,13 @@ class CompleteTextInput extends Component {
           labelStyle={styles.floatingLabel}
           inputStyle={[styles.input, { color: textColor }]}
           autoCapitalize="none"
+          onSubmitEditing={Keyboard.dismiss}
           style={styles.formInput}
           editable={isEnable}
           value={value}
           multiline={false}
           secureTextEntry={secureTextEntry && isSecure}
-          returnKeyType="next"
+          returnKeyType="done"
           onChangeText={(t) => {
             onChangeText(t);
           }}
