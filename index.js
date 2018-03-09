@@ -33,6 +33,7 @@ class CompleteTextInput extends Component {
           onSubmitEditing={Keyboard.dismiss}
           style={styles.formInput}
           editable={isEnable}
+          underlineColorAndroid='transparent'
           value={value}
           multiline={false}
           secureTextEntry={secureTextEntry && isSecure}
