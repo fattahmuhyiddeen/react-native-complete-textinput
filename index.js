@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { View, TouchableOpacity, Image, StyleSheet, Keyboard } from 'react-native';
+import {
+  View,
+  TouchableOpacity,
+  Image,
+  StyleSheet,
+  Keyboard,
+} from 'react-native';
 import PropTypes from 'prop-types';
 import FloatingLabel from 'react-native-floating-labels';
 
@@ -25,7 +31,7 @@ class CompleteTextInput extends Component {
     } = this.props;
     const { isSecure } = this.state;
     return (
-      <View>
+      <View style={{ width: '100%' }}>
         <FloatingLabel
           labelStyle={styles.floatingLabel}
           inputStyle={[styles.input, { color: textColor }]}
@@ -33,12 +39,12 @@ class CompleteTextInput extends Component {
           onSubmitEditing={Keyboard.dismiss}
           style={styles.formInput}
           editable={isEnable}
-          underlineColorAndroid='transparent'
+          underlineColorAndroid="transparent"
           value={value}
           multiline={false}
           secureTextEntry={secureTextEntry && isSecure}
           returnKeyType="done"
-          onChangeText={(t) => {
+          onChangeText={t => {
             onChangeText(t);
           }}
           selectionColor={'blue'}
