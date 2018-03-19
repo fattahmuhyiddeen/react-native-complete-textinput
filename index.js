@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
   floatingLabel: { backgroundColor: 'transparent' },
   input: { borderWidth: 0 },
   formInput: { borderWidth: 0, borderBottomWidth: 1.5, marginTop: 10 },
+  eyeIcon: { position: 'absolute', right: 0, top: 6 }
 });
 
 const showImage = require('./show.png');
@@ -55,7 +56,7 @@ class CompleteTextInput extends Component {
         </FloatingLabel>
         {secureTextEntry && (
           <TouchableOpacity
-            style={{ position: 'absolute', right: 0, top: 6 }}
+            style={styles.eyeIcon}
             activeOpacity={1}
             onPressIn={() => this.setState({ isSecure: false })}
             onPressOut={() => this.setState({ isSecure: true })}
