@@ -28,6 +28,7 @@ class CompleteTextInput extends Component {
       value,
       secureTextEntry,
       textColor,
+      customStyle
     } = this.props;
     const { isSecure } = this.state;
     return (
@@ -37,7 +38,7 @@ class CompleteTextInput extends Component {
           inputStyle={[styles.input, { color: textColor }]}
           autoCapitalize="none"
           onSubmitEditing={Keyboard.dismiss}
-          style={styles.formInput}
+          style={[styles.formInput, customStyle]}
           editable={isEnable}
           underlineColorAndroid="transparent"
           value={value}
@@ -81,6 +82,7 @@ CompleteTextInput.propTypes = {
   value: PropTypes.string,
   secureTextEntry: PropTypes.bool,
   textColor: PropTypes.string,
+  customStyle: PropTypes.object,
 };
 
 CompleteTextInput.defaultProps = {
@@ -90,6 +92,7 @@ CompleteTextInput.defaultProps = {
   secureTextEntry: false,
   value: '',
   textColor: 'black',
+  customStyle: {},
 };
 
 export default CompleteTextInput;
