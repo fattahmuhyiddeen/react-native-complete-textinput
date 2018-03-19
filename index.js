@@ -57,12 +57,8 @@ class CompleteTextInput extends Component {
           <TouchableOpacity
             style={{ position: 'absolute', right: 0, top: 6 }}
             activeOpacity={1}
-            onPressIn={() => {
-              this.setState({ isSecure: false });
-            }}
-            onPressOut={() => {
-              this.setState({ isSecure: true });
-            }}
+            onPressIn={() => this.setState({ isSecure: false })}
+            onPressOut={() => this.setState({ isSecure: true })}
           >
             <Image
               style={{ tintColor: textColor }}
