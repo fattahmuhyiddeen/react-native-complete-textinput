@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
   floatingLabel: { backgroundColor: 'transparent' },
   input: { borderWidth: 0 },
   formInput: { borderWidth: 0, borderBottomWidth: 1.5, marginTop: 10 },
-  eyeIcon: { position: 'absolute', right: 0, top: 6 }
 });
 
 const showImage = require('./show.png');
@@ -29,7 +28,7 @@ class CompleteTextInput extends Component {
       value,
       secureTextEntry,
       textColor,
-      customStyle
+      customStyle,
     } = this.props;
     const { isSecure } = this.state;
     return (
@@ -46,7 +45,7 @@ class CompleteTextInput extends Component {
           multiline={false}
           secureTextEntry={secureTextEntry && isSecure}
           returnKeyType="done"
-          onChangeText={t => {
+          onChangeText={(t) => {
             onChangeText(t);
           }}
           selectionColor={'blue'}
@@ -56,10 +55,17 @@ class CompleteTextInput extends Component {
         </FloatingLabel>
         {secureTextEntry && (
           <TouchableOpacity
-            style={styles.eyeIcon}
+            style={{ position: 'absolute', right: 0, top: 6 }}
             activeOpacity={1}
-            onPressIn={() => this.setState({ isSecure: false })}
-            onPressOut={() => this.setState({ isSecure: true })}
+            onPressIn={() => {
+              this.setState({ isSecure: !this.state.isSecure });
+            }}
+          // onPressIn={() => {
+          //   this.setState({ isSecure: false });
+          // }}
+          // onPressOut={() => {
+          //   this.setState({ isSecure: true });
+          // }}
           >
             <Image
               style={{ tintColor: textColor }}
