@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
   View,
   TouchableOpacity,
   Image,
   StyleSheet,
-  Keyboard,
-} from 'react-native';
-import PropTypes from 'prop-types';
-import FloatingLabel from 'react-native-floating-labels';
+  Keyboard
+} from 'react-native'
+import PropTypes from 'prop-types'
+import FloatingLabel from 'react-native-floating-labels'
 
 const styles = StyleSheet.create({
   floatingLabel: { backgroundColor: 'transparent' },
   input: { borderWidth: 0 },
-  formInput: { borderWidth: 0, borderBottomWidth: 1.5, marginTop: 10 },
-});
+  formInput: { borderWidth: 0, borderBottomWidth: 1.5, marginTop: 10 }
+})
 
-const showImage = require('./show.png');
-const hideImage = require('./hide.png');
+const showImage = require('./show.png')
+const hideImage = require('./hide.png')
 
 class CompleteTextInput extends Component {
-  state = { isSecure: true };
+  state = { isSecure: true }
   render() {
     const {
       onChangeText,
@@ -28,9 +28,9 @@ class CompleteTextInput extends Component {
       value,
       secureTextEntry,
       textColor,
-      customStyle,
-    } = this.props;
-    const { isSecure } = this.state;
+      customStyle
+    } = this.props
+    const { isSecure } = this.state
     return (
       <View style={{ width: '100%' }}>
         <FloatingLabel
@@ -45,10 +45,11 @@ class CompleteTextInput extends Component {
           multiline={false}
           secureTextEntry={secureTextEntry && isSecure}
           returnKeyType="done"
-          onChangeText={(t) => {
-            onChangeText(t);
+          onChangeText={t => {
+            onChangeText(t)
           }}
           selectionColor={'blue'}
+          {...this.props}
         // onBlur={this.onBlur}
         >
           {placeholder}
@@ -58,7 +59,7 @@ class CompleteTextInput extends Component {
             style={{ position: 'absolute', right: 0, top: 6 }}
             activeOpacity={1}
             onPressIn={() => {
-              this.setState({ isSecure: !this.state.isSecure });
+              this.setState({ isSecure: !this.state.isSecure })
             }}
           // onPressIn={() => {
           //   this.setState({ isSecure: false });
@@ -74,7 +75,7 @@ class CompleteTextInput extends Component {
           </TouchableOpacity>
         )}
       </View>
-    );
+    )
   }
 }
 
@@ -85,8 +86,8 @@ CompleteTextInput.propTypes = {
   value: PropTypes.string,
   secureTextEntry: PropTypes.bool,
   textColor: PropTypes.string,
-  customStyle: PropTypes.object,
-};
+  customStyle: PropTypes.object
+}
 
 CompleteTextInput.defaultProps = {
   isEnable: true,
@@ -95,7 +96,7 @@ CompleteTextInput.defaultProps = {
   secureTextEntry: false,
   value: '',
   textColor: 'black',
-  customStyle: {},
-};
+  customStyle: {}
+}
 
-export default CompleteTextInput;
+export default CompleteTextInput
