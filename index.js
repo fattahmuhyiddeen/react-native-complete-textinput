@@ -62,12 +62,8 @@ class CompleteTextInput extends Component {
             onPressIn={() => {
               this.setState({ isSecure: !this.state.isSecure });
             }}
-          // onPressIn={() => {
-          //   this.setState({ isSecure: false });
-          // }}
-          // onPressOut={() => {
-          //   this.setState({ isSecure: true });
-          // }}
+          // onPressIn={() => this.setState({ isSecure: false })}
+          // onPressOut={() => this.setState({ isSecure: true })}
           >
             <Image
               style={{ tintColor: textColor }}
