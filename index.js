@@ -11,7 +11,7 @@ import FloatingLabel from "react-native-floating-labels";
 
 const styles = StyleSheet.create({
   floatingLabel: { backgroundColor: "transparent" },
-  input: { borderWidth: 0, height: 45, fontSize: 16 },
+  input: { borderWidth: 0, height: 35, fontSize: 14 },
   formInput: { borderWidth: 0, borderBottomWidth: 1.5, marginTop: 10 }
 });
 
@@ -49,17 +49,17 @@ class CompleteTextInput extends Component {
           // selectionColor={"blue"}
           {...this.props}
           secureTextEntry={secureTextEntry && isSecure}
-          // onBlur={this.onBlur}
+        // onBlur={this.onBlur}
         >
           {placeholder}
         </FloatingLabel>
         {secureTextEntry && (
           <TouchableOpacity
-            style={{ position: "absolute", right: 0, top: 6 }}
+            style={{ position: "absolute", right: 0, top: 20 }}
             activeOpacity={1}
             onPressIn={() => this.setState({ isSecure: !this.state.isSecure })}
-            // onPressIn={() => this.setState({ isSecure: false })}
-            // onPressOut={() => this.setState({ isSecure: true })}
+          // onPressIn={() => this.setState({ isSecure: false })}
+          // onPressOut={() => this.setState({ isSecure: true })}
           >
             <Image
               style={{ tintColor: textColor }}
@@ -85,7 +85,7 @@ CompleteTextInput.propTypes = {
 CompleteTextInput.defaultProps = {
   isEnable: true,
   placeholder: "Input",
-  onChangeText: () => {},
+  onChangeText: () => { },
   secureTextEntry: false,
   value: "",
   textColor: "black",
