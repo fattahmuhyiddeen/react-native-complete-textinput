@@ -62,8 +62,9 @@ class CompleteTextInput extends Component {
           // onPressOut={() => this.setState({ isSecure: true })}
           >
             <Image
-              style={{ tintColor: textColor }}
+              style={{ tintColor: textColor, width: 25, height: 25 }}
               source={isSecure ? hideImage : showImage}
+              resizeMode='contain'
             />
           </TouchableOpacity>
         )}
