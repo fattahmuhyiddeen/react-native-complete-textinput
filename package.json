@@ -1,6 +1,6 @@
 {
   "name": "react-native-complete-textinput",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Usable text input of the box for React Native",
   "main": "index.js",
   "scripts": {
