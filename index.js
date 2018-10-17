@@ -11,7 +11,7 @@ import FloatingLabel from "react-native-floating-labels";
 
 const styles = StyleSheet.create({
   floatingLabel: { backgroundColor: "transparent" },
-  input: { borderWidth: 0, height: 35, fontSize: 14 },
+  input: { borderWidth: 0, fontSize: 14 },
   formInput: { borderWidth: 0, borderBottomWidth: 1.5, marginTop: 10 }
 });
 
