@@ -20,6 +20,7 @@ const hideImage = require("./hide.png");
 
 class CompleteTextInput extends Component {
   state = { isSecure: true };
+  focus = () => this.inputObject.focus()
   render() {
     const {
       onChangeText,
@@ -41,6 +42,7 @@ class CompleteTextInput extends Component {
           style={[styles.formInput, customStyle]}
           color={textColor}
           editable={isEnable}
+          ref={c => { this.inputObject = c }}
           underlineColorAndroid="transparent"
           value={value}
           multiline={false}
